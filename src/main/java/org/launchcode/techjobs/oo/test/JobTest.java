@@ -91,11 +91,17 @@ public class JobTest {
     @Test
     public void testToStringHandlesEmptyField() {
         Job testJob = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String output = "\n" +
+                "ID: " + testJob.getId() + "\n" +
+                "Name: Data not available" + "\n" +
+                "Employer: Data not available" + "\n" +
+                "Location: Data not available" + "\n" +
+                "Position Type: Data not available" + "\n" +
+                "Core Competency: Data not available" + "\n";
 
-        assertEquals("", testJob.getEmployer().getValue());
+        assertEquals(output, testJob.toString());
 
-        assertTrue(testJob.toString().contains("Data not available"));
-
+//        assertTrue(testJob.toString().contains("Data not available"));
         // the TestTaskFive.java needs a toString test, why? I did one up there and it still failed
 
     }
